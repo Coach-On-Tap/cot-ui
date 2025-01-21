@@ -39,7 +39,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          registry-url: https://registry.npmjs.org/
+          registry-url: https://npm.pkg.github.com/
+          scope: "@coachontap"
           cache: "yarn"
 
       - name: Install dependencies
@@ -48,4 +49,4 @@ jobs:
       - name: Publish package
         run: yarn publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
