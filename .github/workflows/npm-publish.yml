@@ -40,8 +40,12 @@ jobs:
         with:
           node-version: 20
           registry-url: https://npm.pkg.github.com/
-          scope: "@coachontap"
+          scope: "@coach-on-tap"
           cache: "yarn"
+
+      - run: |
+          echo "@coach-on-tap:registry=https://npm.pkg.github.com" >> .npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> .npmrc
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
@@ -49,4 +53,4 @@ jobs:
       - name: Publish package
         run: yarn publish
         env:
-          NODE_AUTH_TOKEN: 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
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
