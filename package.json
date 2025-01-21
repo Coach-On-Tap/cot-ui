@@ -1,13 +1,14 @@
 {
-  "name": "@coachontap/cot-ui",
-  "version": "1.0.1",
+  "name": "@coach-on-tap/cot-ui",
+  "version": "1.0.2",
   "main": "index.js",
   "license": "MIT",
   "repository": {
+    "type": "git",
     "url": "https://github.com/Coach-On-Tap/cot-ui.git"
   },
   "publishConfig": {
     "access": "public",
-    "registry": "https://github.com/Coach-On-Tap/cot-ui.git"
+    "registry": "https://npm.pkg.github.com"
   }
 }
