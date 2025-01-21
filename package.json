@@ -1,0 +1,12 @@
+{
+  "name": "@coachontap/cot-ui",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/Coach-On-Tap/cot-ui.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
