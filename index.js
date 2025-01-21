@@ -1,3 +1,4 @@
-console.log("Hello World");
-console.log("Hello World");
-console.log("Hello World");
+const total = () => {
+  return 100;
+};
+export default total;
