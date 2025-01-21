@@ -4,19 +4,34 @@
 name: Node.js Package
 
 on:
-  release:
-    types: [created]
+  push:
+    branches: [master] # Thay đổi trigger để chạy khi push vào main
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Cần để lấy toàn bộ history cho versioning
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+
+      - name: Git config
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+
       - run: npm ci
       - run: npm test
+
+      - name: Bump version
+        run: |
+          npm version patch -m "Bump version to %s [skip ci]"
+          git push
+          git push --tags
 
   publish-npm:
     needs: build
