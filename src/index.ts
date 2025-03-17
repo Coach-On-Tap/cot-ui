@@ -1,2 +1,2 @@
-export * from "./components/common/Button";
+export * from "./components/Button";
 // Export các components khác
