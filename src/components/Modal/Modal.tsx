@@ -14,7 +14,7 @@ export interface ModalProps extends ModalBaseProps {
   onClose: () => void;
 }
 
-const Modal = ({ title, onClose, children, ...rest }: ModalProps) => (
+export const Modal = ({ title, onClose, children, ...rest }: ModalProps) => (
   <MuiModal {...rest} onClose={onClose}>
     <Box
       sx={{

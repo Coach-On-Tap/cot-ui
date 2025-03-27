@@ -13,7 +13,7 @@ export interface DialogProps extends DialogBaseProps {
   actions?: React.ReactNode;
 }
 
-const Dialog = ({ label, children, actions, ...rest }: DialogProps) => (
+export const Dialog = ({ label, children, actions, ...rest }: DialogProps) => (
   <MuiDialog {...rest}>
     <DialogTitle>{label}</DialogTitle>
     <DialogContent>{children}</DialogContent>

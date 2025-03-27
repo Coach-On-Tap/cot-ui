@@ -9,8 +9,7 @@ type RadioGroupBaseProps = MuiRadioGroupProps;
 export interface RadioGroupProps extends RadioGroupBaseProps {
   options: { label: string; value: string }[];
 }
-
-const RadioGroup = ({ options, ...rest }: RadioGroupProps) => (
+export const RadioGroup = ({ options, ...rest }: RadioGroupProps) => (
   <MuiRadioGroup {...rest}>
     {options.map((option) => (
       <Radio key={option.value} label={option.label} value={option.value} />

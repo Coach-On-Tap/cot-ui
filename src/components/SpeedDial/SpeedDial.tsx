@@ -17,7 +17,7 @@ export interface SpeedDialProps extends SpeedDialBaseProps {
   actions: SpeedDialActionType[];
 }
 
-const SpeedDial: React.FC<SpeedDialProps> = ({ actions, ...rest }) => {
+export const SpeedDial: React.FC<SpeedDialProps> = ({ actions, ...rest }) => {
   return (
     <MuiSpeedDial {...rest}>
       {actions.map((action) => (

@@ -7,7 +7,7 @@ export interface ButtonGroupProps extends MuiButtonGroupProps {
   label?: string;
 }
 
-const ButtonGroup = ({ label, ...rest }: ButtonGroupProps) => (
+export const ButtonGroup = ({ label, ...rest }: ButtonGroupProps) => (
   <ButtonGroupMui aria-label={label} {...rest} />
 );
 

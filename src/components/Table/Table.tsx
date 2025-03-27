@@ -21,7 +21,7 @@ export interface TableProps extends TableBaseProps {
   data: any[];
 }
 
-const Table: React.FC<TableProps> = ({ columns, data, ...rest }) => {
+export const Table: React.FC<TableProps> = ({ columns, data, ...rest }) => {
   return (
     <TableContainer>
       <MuiTable {...rest}>

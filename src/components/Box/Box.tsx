@@ -4,7 +4,7 @@ export interface BoxProps extends MuiBoxProps {
   label?: string;
 }
 
-const Box = ({ label, ...rest }: BoxProps) => (
+export const Box = ({ label, ...rest }: BoxProps) => (
   <BoxMui {...rest}>{label && <span>{label}</span>}</BoxMui>
 );
 

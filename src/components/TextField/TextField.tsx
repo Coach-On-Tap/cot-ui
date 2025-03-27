@@ -9,7 +9,7 @@ export type TextFieldProps = TextFieldBaseProps & {
   label: string;
 };
 
-const TextField = (props: TextFieldProps) => {
+export const TextField = (props: TextFieldProps) => {
   return <MuiTextField {...props} />;
 };
 

@@ -12,7 +12,7 @@ export interface SnackbarProps extends SnackbarBaseProps {
   severity?: "success" | "error" | "warning" | "info";
 }
 
-const Snackbar: React.FC<SnackbarProps> = ({
+export const Snackbar: React.FC<SnackbarProps> = ({
   message,
   severity = "info",
   ...rest

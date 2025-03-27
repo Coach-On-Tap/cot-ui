@@ -9,7 +9,7 @@ export interface SkeletonProps extends SkeletonBaseProps {
   label: string;
 }
 
-const Skeleton = ({ label, ...props }: SkeletonProps) => {
+export const Skeleton = ({ label, ...props }: SkeletonProps) => {
   return (
     <div aria-label={label}>
       <MuiSkeleton {...props} />

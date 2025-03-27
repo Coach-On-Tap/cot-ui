@@ -9,7 +9,7 @@ export interface PaperProps extends PaperBaseProps {
     label: string;
 }
 
-const Paper = ({ label, ...props }: PaperProps) => {
+export const Paper = ({ label, ...props }: PaperProps) => {
     return (
         <MuiPaper {...props}>
             {label}

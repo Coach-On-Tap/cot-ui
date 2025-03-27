@@ -11,7 +11,7 @@ export interface LinearProgressProps extends LinearProgressBaseProps {
   label?: string;
 }
 
-const LinearProgress = ({ label, ...props }: LinearProgressProps) => (
+export const LinearProgress = ({ label, ...props }: LinearProgressProps) => (
   <Box sx={{ width: "100%", margin: "16px 0" }}>
     {label && (
       <Typography variant="body2" sx={{ marginBottom: 1 }}>

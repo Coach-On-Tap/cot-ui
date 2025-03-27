@@ -6,7 +6,7 @@ export interface StackProps extends StackBaseProps {
   label: string;
 }
 
-const Stack = ({ label, ...props }: StackProps) => {
+export const Stack = ({ label, ...props }: StackProps) => {
   return (
     <>
       <div>{label}</div>

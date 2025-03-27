@@ -17,7 +17,10 @@ const DatePickerStyled = styled(DatePicker)({}) as
   | React.ElementType
   | React.ComponentType<CustomDatePickerProps>;
 
-const DatePickerMui: React.FC<CustomDatePickerProps> = ({ label, ...rest }) => {
+export const DatePickerMui: React.FC<CustomDatePickerProps> = ({
+  label,
+  ...rest
+}) => {
   return (
     <LocalizationProvider dateAdapter={AdapterLuxon}>
       <DatePickerStyled label={label} {...rest} />

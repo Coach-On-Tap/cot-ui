@@ -6,7 +6,7 @@ export interface GridProps extends GridBaseProps {
   label: string;
 }
 
-const Grid = ({ label, children, ...rest }: GridProps) => (
+export const Grid = ({ label, children, ...rest }: GridProps) => (
   <MuiGrid {...rest}>
     <div>{label}</div>
     {children}

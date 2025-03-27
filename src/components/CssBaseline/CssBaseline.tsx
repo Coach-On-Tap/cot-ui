@@ -7,7 +7,7 @@ export interface CssBaselineProps extends MuiCssBaselineProps {
   label?: string;
 }
 
-const CssBaseline = ({ label, ...rest }: CssBaselineProps) => (
+export const CssBaseline = ({ label, ...rest }: CssBaselineProps) => (
   <CssBaselineMui {...rest} />
 );
 

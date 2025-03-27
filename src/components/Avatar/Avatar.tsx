@@ -7,7 +7,7 @@ export interface AvatarProps extends MuiAvatarProps {
   label: string;
 }
 
-const Avatar = ({ label, ...rest }: AvatarProps) => (
+export const Avatar = ({ label, ...rest }: AvatarProps) => (
   <AvatarMui {...rest}>{label}</AvatarMui>
 );
 

@@ -6,7 +6,7 @@ export interface AlertProps extends AlertBaseProps {
   label: string;
 }
 
-const Alert = ({ label, ...rest }: AlertProps) => (
+export const Alert = ({ label, ...rest }: AlertProps) => (
   <MuiAlert {...rest}>{label}</MuiAlert>
 );
 

@@ -9,7 +9,7 @@ export interface AutocompleteProps<T>
   label: string;
 }
 
-const Autocomplete = <T,>({
+export const Autocomplete = <T,>({
   label,
   renderInput,
   ...rest

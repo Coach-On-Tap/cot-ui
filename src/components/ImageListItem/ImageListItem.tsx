@@ -8,7 +8,7 @@ export interface ImageListItemProps extends ImageListItemBaseProps {
   label: string;
 }
 
-const ImageListItem = ({ label, children, ...rest }: ImageListItemProps) => (
+export const ImageListItem = ({ label, children, ...rest }: ImageListItemProps) => (
   <div>
     <div>{label}</div>
     <ImageListItemMui {...rest}>{children}</ImageListItemMui>
