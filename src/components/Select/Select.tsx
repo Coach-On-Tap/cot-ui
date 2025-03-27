@@ -8,7 +8,7 @@ type SelectBaseProps = MuiSelectProps;
 
 export interface SelectOption {
   value: string | number;
-  label: string;
+  label?: string;
 }
 
 export type SelectProps = SelectBaseProps & {

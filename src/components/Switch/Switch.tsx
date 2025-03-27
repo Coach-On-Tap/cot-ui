@@ -7,7 +7,7 @@ import {
 type SwitchBaseProps = MuiSwitchProps;
 
 export interface SwitchProps extends SwitchBaseProps {
-  label: string;
+  label?: string;
 }
 
 export const Switch = ({ label, ...props }: SwitchProps) => {

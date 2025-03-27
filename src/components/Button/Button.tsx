@@ -6,7 +6,7 @@ import {
 type ButtonBaseProps = MuiButtonProps;
 
 export interface ButtonProps extends ButtonBaseProps {
-  label: string;
+  label?: string;
 }
 
 export const Button = ({ label, ...rest }: ButtonProps) => (

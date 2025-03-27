@@ -6,7 +6,7 @@ import {
   type FabBaseProps = MuiFabProps;
   
   export interface FabProps extends FabBaseProps {
-    label: string;
+    label?: string;
   }
   
   export const Fab = ({ label, ...rest }: FabProps) => (

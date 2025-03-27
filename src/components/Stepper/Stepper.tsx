@@ -9,7 +9,7 @@ import React from "react";
 type StepperBaseProps = MuiStepperProps;
 
 export interface StepperStep {
-  label: string;
+  label?: string;
 }
 
 export interface StepperProps extends StepperBaseProps {

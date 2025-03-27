@@ -13,7 +13,7 @@ type TableBaseProps = MuiTableProps;
 
 export interface TableColumn {
   id: string;
-  label: string;
+  label?: string;
 }
 
 export interface TableProps extends TableBaseProps {

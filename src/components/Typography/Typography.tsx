@@ -7,7 +7,7 @@ import React from "react";
 type TypographyBaseProps = MuiTypographyProps;
 
 export interface TypographyProps extends TypographyBaseProps {
-  label: string;
+  label?: string;
 }
 
 export const Typography: React.FC<TypographyProps> = ({ label, ...props }) => {

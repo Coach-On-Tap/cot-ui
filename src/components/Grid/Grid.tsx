@@ -3,7 +3,7 @@ import { Grid as MuiGrid, GridProps as MuiGridProps } from "@mui/material";
 type GridBaseProps = MuiGridProps;
 
 export interface GridProps extends GridBaseProps {
-  label: string;
+  label?: string;
 }
 
 export const Grid = ({ label, children, ...rest }: GridProps) => (

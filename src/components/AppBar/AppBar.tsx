@@ -6,7 +6,7 @@ import {
 } from "@mui/material";
 
 export interface AppBarProps extends MuiAppBarProps {
-  label: string;
+  label?: string;
 }
 export const AppBar = ({ label, ...rest }: AppBarProps) => (
   <AppBarMui {...rest}>
