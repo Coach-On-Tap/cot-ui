@@ -4,7 +4,7 @@ import {
 } from "@mui/material";
 
 export interface AvatarProps extends MuiAvatarProps {
-  label: string;
+  label?: string;
 }
 
 export const Avatar = ({ label, ...rest }: AvatarProps) => (

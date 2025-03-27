@@ -4,7 +4,7 @@ import React from "react";
 type TabsBaseProps = MuiTabsProps;
 
 export interface TabItem {
-  label: string;
+  label?: string;
   value: string;
 }
 

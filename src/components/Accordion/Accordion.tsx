@@ -8,14 +8,14 @@ import {
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 export interface AccordionProps extends MuiAccordionProps {
-  title: string;
+  label?: string;
   content: string;
 }
 
-export const Accordion = ({ title, content, ...rest }: AccordionProps) => (
+export const Accordion = ({ label, content, ...rest }: AccordionProps) => (
   <MuiAccordion {...rest}>
     <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-      <Typography>{title}</Typography>
+      <Typography>{label}</Typography>
     </AccordionSummary>
     <AccordionDetails>
       <Typography>{content}</Typography>

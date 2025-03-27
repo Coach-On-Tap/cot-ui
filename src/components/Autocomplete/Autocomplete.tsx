@@ -6,7 +6,7 @@ import {
 
 export interface AutocompleteProps<T>
   extends MuiAutocompleteProps<T, false, false, false> {
-  label: string;
+  label?: string;
 }
 
 export const Autocomplete = <T,>({

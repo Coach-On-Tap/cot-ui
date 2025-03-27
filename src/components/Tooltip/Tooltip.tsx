@@ -7,7 +7,7 @@ import React from "react";
 type TooltipBaseProps = MuiTooltipProps;
 
 export interface TooltipProps extends TooltipBaseProps {
-  label: string;
+  label?: string;
 }
 
 export const Tooltip: React.FC<TooltipProps> = ({ children, label, ...rest }) => {

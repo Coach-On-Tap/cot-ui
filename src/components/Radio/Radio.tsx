@@ -7,7 +7,7 @@ import {
 type RadioBaseProps = MuiRadioProps;
 
 export interface RadioProps extends RadioBaseProps {
-  label: string;
+  label?: string;
 }
 
 export const Radio = ({ label, ...rest }: RadioProps) => (

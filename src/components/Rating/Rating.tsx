@@ -7,7 +7,7 @@ import { Typography } from "@mui/material";
 type RatingBaseProps = MuiRatingProps;
 
 export interface RatingProps extends RatingBaseProps {
-  label: string;
+  label?: string;
 }
 
 export const Rating = ({ label, ...props }: RatingProps) => {

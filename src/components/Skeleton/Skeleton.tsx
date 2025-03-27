@@ -6,7 +6,7 @@ import {
 type SkeletonBaseProps = MuiSkeletonProps;
 
 export interface SkeletonProps extends SkeletonBaseProps {
-  label: string;
+  label?: string;
 }
 
 export const Skeleton = ({ label, ...props }: SkeletonProps) => {

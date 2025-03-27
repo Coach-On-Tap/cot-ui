@@ -5,7 +5,7 @@ import ImageListItemMui, {
 type ImageListItemBaseProps = MuiImageListItemProps;
 
 export interface ImageListItemProps extends ImageListItemBaseProps {
-  label: string;
+  label?: string;
 }
 
 export const ImageListItem = ({ label, children, ...rest }: ImageListItemProps) => (

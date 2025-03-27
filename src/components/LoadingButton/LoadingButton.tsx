@@ -3,7 +3,7 @@ import LoadingButtonMui, {
 } from "@mui/lab/LoadingButton";
 
 export interface LoadingButtonProps extends MuiLoadingButtonProps {
-  label: string;
+  label?: string;
 }
 
 export const LoadingButton = ({ label, ...rest }: LoadingButtonProps) => (

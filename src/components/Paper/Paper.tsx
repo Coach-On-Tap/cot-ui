@@ -6,7 +6,7 @@ import {
 type PaperBaseProps = MuiPaperProps;
 
 export interface PaperProps extends PaperBaseProps {
-    label: string;
+    label?: string;
 }
 
 export const Paper = ({ label, ...props }: PaperProps) => {

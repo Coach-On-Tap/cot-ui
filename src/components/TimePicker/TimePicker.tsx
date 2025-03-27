@@ -10,7 +10,7 @@ import React from "react";
 type TimePickerBaseProps = MuiTimePickerProps<Date, boolean>;
 
 export interface TimePickerProps extends TimePickerBaseProps {
-  label: string;
+  label?: string;
 }
 
 export const TimePicker: React.FC<TimePickerProps> = ({ label, ...rest }) => {
