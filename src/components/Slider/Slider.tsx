@@ -10,7 +10,7 @@ export interface SliderProps extends SliderBaseProps {
   label: string;
 }
 
-const Slider = ({ label, ...props }: SliderProps) => {
+export const Slider = ({ label, ...props }: SliderProps) => {
   return (
     <div>
       <Typography variant="body1">{label}</Typography>

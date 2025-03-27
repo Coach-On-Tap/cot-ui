@@ -7,7 +7,7 @@ export interface BackdropProps extends MuiBackdropProps {
   label?: string;
 }
 
-const Backdrop = ({ label, ...rest }: BackdropProps) => (
+export const Backdrop = ({ label, ...rest }: BackdropProps) => (
   <BackdropMui {...rest}>{label && <span>{label}</span>}</BackdropMui>
 );
 

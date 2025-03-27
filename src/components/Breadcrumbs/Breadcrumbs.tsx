@@ -7,7 +7,7 @@ export interface BreadcrumbsProps extends MuiBreadcrumbsProps {
   label?: string;
 }
 
-const Breadcrumbs = ({ label, ...rest }: BreadcrumbsProps) => (
+export const Breadcrumbs = ({ label, ...rest }: BreadcrumbsProps) => (
   <BreadcrumbsMui aria-label={label} {...rest} />
 );
 

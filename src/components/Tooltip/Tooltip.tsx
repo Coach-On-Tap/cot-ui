@@ -10,7 +10,7 @@ export interface TooltipProps extends TooltipBaseProps {
   label: string;
 }
 
-const Tooltip: React.FC<TooltipProps> = ({ children, label, ...rest }) => {
+export const Tooltip: React.FC<TooltipProps> = ({ children, label, ...rest }) => {
   const { title, ...restWithoutTitle } = rest;
   return (
     <MuiTooltip title={label} {...restWithoutTitle}>

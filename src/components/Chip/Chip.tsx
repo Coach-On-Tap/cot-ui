@@ -7,7 +7,7 @@ import {
     label: string; 
   }
   
-  const Chip = ({ label, ...rest }: ChipProps) => (
+  export const Chip = ({ label, ...rest }: ChipProps) => (
     <ChipMui label={label} {...rest} />
   );
   

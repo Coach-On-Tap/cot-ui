@@ -17,7 +17,7 @@ export interface MenuProps extends MenuBaseProps {
   items: MenuItemData[];
 }
 
-const Menu = ({ items, ...rest }: MenuProps) => (
+export const Menu = ({ items, ...rest }: MenuProps) => (
   <MuiMenu {...rest}>
     {items.map((item) => (
       <MenuItem key={item.id} onClick={item.onClick}>

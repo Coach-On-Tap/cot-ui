@@ -15,7 +15,7 @@ export type SelectProps = SelectBaseProps & {
   options: SelectOption[];
 };
 
-const Select = ({ options, ...rest }: SelectProps) => (
+export const Select = ({ options, ...rest }: SelectProps) => (
   <MuiSelect {...rest}>
     {options.map((option) => (
       <MenuItem key={option.value} value={option.value}>

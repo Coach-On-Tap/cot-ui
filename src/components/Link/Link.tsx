@@ -6,7 +6,7 @@ export interface LinkProps extends LinkBaseProps {
   label: string;
 }
 
-const Link = ({ label, ...rest }: LinkProps) => (
+export const Link = ({ label, ...rest }: LinkProps) => (
   <MuiLink {...rest}>{label}</MuiLink>
 );
 

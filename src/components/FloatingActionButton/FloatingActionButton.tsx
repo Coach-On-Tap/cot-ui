@@ -9,7 +9,7 @@ import {
     label: string;
   }
   
-  const Fab = ({ label, ...rest }: FabProps) => (
+  export const Fab = ({ label, ...rest }: FabProps) => (
     <FabMui {...rest}>{label}</FabMui>
   );
   

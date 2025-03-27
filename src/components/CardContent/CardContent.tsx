@@ -7,7 +7,7 @@ export interface CardContentProps extends MuiCardContentProps {
   label?: string;
 }
 
-const CardContent = ({ label, ...rest }: CardContentProps) => (
+export const CardContent = ({ label, ...rest }: CardContentProps) => (
   <CardContentMui {...rest}>{label && <span>{label}</span>}</CardContentMui>
 );
 

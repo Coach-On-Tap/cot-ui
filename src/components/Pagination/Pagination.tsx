@@ -11,7 +11,7 @@ export interface PaginationProps extends PaginationBaseProps {
   onChange: (event: React.ChangeEvent<unknown>, value: number) => void;
 }
 
-const Pagination = ({ count, page, onChange, ...rest }: PaginationProps) => (
+export const Pagination = ({ count, page, onChange, ...rest }: PaginationProps) => (
   <MuiPagination count={count} page={page} onChange={onChange} {...rest} />
 );
 
