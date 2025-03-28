@@ -23,7 +23,6 @@ export * from "./components/DatePicker/DatePicker";
 export * from "./components/Dialog/Dialog";
 export * from "./components/Divider/Divider";
 export * from "./components/Drawer/Drawer";
-export * from "./components/FloatingActionButton/FloatingActionButton";
 export * from "./components/Grid/Grid";
 export * from "./components/ImageList/ImageList";
 export * from "./components/ImageListItem/ImageListItem";
