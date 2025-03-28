@@ -1,10 +1,23 @@
 {
   "name": "@coach-on-tap/cot-ui",
   "private": false,
-  "version": "0.0.6",
+  "version": "1.0.0",
   "type": "module",
   "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./Button": {
+      "import": "./dist/components/Button/Button.mjs",
+      "require": "./dist/components/Button/Button.js",
+      "types": "./dist/components/Button/Button.d.ts"
+    }
+  },
   "files": [
     "dist",
     "README.md"
