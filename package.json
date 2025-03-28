@@ -3,19 +3,20 @@
   "private": false,
   "version": "0.0.11",
   "type": "module",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/index.js"
     },
     "./Button": {
+      "types": "./dist/components/Button/Button.d.ts",
       "import": "./dist/components/Button/Button.mjs",
-      "require": "./dist/components/Button/Button.js",
-      "types": "./dist/components/Button/Button.d.ts"
+      "require": "./dist/components/Button/Button.js"
     }
   },
   "files": [
