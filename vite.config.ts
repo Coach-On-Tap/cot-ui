@@ -9,8 +9,10 @@ export default defineConfig({
     react(),
     dts({
       include: ["src"],
-      exclude: ["src/**/*.stories.tsx", "src/**/*.test.tsx"],
-      rollupTypes: true,
+      beforeWriteFile: (filePath, content) => ({
+        filePath: filePath.replace("/src/", "/"),
+        content,
+      }),
     }),
   ],
   resolve: {
@@ -22,17 +24,14 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
       formats: ["es", "cjs"],
-      fileName: (format) => `index.${format === "es" ? "mjs" : "js"}`,
+      fileName: (format) => `index.${format === "es" ? "es.js" : "js"}`,
     },
     rollupOptions: {
-      external: ["react", "react-dom", "@mui/material", "@emotion/react", "@emotion/styled"],
+      external: ["react", "react-dom"],
       output: {
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
-          "@mui/material": "MuiMaterial",
-          "@emotion/react": "EmotionReact",
-          "@emotion/styled": "EmotionStyled",
         },
       },
     },
