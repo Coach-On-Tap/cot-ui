@@ -2,18 +2,6 @@
   "name": "@coach-on-tap/cot-ui",
   "private": false,
   "version": "0.0.15",
-  "type": "module",
-  "sideEffects": false,
-  "main": "./dist/index.cjs.js",
-  "module": "./dist/index.es.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.cjs.js"
-    }
-  },
   "files": [
     "dist",
     "README.md"
@@ -43,6 +31,7 @@
     "@mui/material-nextjs": "^7.0.0",
     "@mui/x-date-pickers": "^7.28.0",
     "date-fns": "^4.1.0",
+    "glob": "^11.0.1",
     "luxon": "^3.5.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
