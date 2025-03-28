@@ -1,7 +1,7 @@
 {
   "name": "@coach-on-tap/cot-ui",
   "private": false,
-  "version": "0.0.15",
+  "version": "0.0.16",
   "files": [
     "dist",
     "README.md"
