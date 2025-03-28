@@ -1,7 +1,7 @@
 {
   "name": "@coach-on-tap/cot-ui",
   "private": false,
-  "version": "0.0.19",
+  "version": "0.0.20",
   "main": "./dist/cot-ui.js",
   "types": "./dist/index.d.ts",
   "sideEffects": false,
