@@ -4,7 +4,7 @@ import React from "react";
 type TabsBaseProps = MuiTabsProps;
 
 export interface TabItem {
-  label: string;
+  label?: string;
   value: string;
 }
 
@@ -14,7 +14,7 @@ export interface TabsProps extends TabsBaseProps {
   value: string;
 }
 
-const Tabs: React.FC<TabsProps> = ({ tabs, onChange, value, ...rest }) => {
+export const Tabs: React.FC<TabsProps> = ({ tabs, onChange, value, ...rest }) => {
   return (
     <MuiTabs value={value} onChange={onChange} {...rest}>
       {tabs.map((tab) => (

@@ -7,7 +7,7 @@ export interface DividerProps extends MuiDividerProps {
   label?: string;
 }
 
-const Divider: React.FC<DividerProps> = ({ label, ...rest }) => {
+export const Divider: React.FC<DividerProps> = ({ label, ...rest }) => {
   return (
     <>
       {label && (

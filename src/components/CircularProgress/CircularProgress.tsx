@@ -7,7 +7,7 @@ import {
     label?: string;
   }
   
-  const CircularProgress = ({ label, ...rest }: CircularProgressProps) => (
+  export const CircularProgress = ({ label, ...rest }: CircularProgressProps) => (
     <CircularProgressMui aria-label={label} {...rest} />
   );
   

@@ -7,10 +7,10 @@ import { Typography } from "@mui/material";
 type SliderBaseProps = MuiSliderProps;
 
 export interface SliderProps extends SliderBaseProps {
-  label: string;
+  label?: string;
 }
 
-const Slider = ({ label, ...props }: SliderProps) => {
+export const Slider = ({ label, ...props }: SliderProps) => {
   return (
     <div>
       <Typography variant="body1">{label}</Typography>

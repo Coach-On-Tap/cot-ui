@@ -7,7 +7,7 @@ export interface BottomNavigationProps extends MuiBottomNavigationProps {
   label?: string;
 }
 
-const BottomNavigation = ({ label, ...rest }: BottomNavigationProps) => (
+export const BottomNavigation = ({ label, ...rest }: BottomNavigationProps) => (
   <BottomNavigationMui aria-label={label} {...rest} />
 );
 

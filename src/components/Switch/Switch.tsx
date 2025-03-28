@@ -7,10 +7,10 @@ import {
 type SwitchBaseProps = MuiSwitchProps;
 
 export interface SwitchProps extends SwitchBaseProps {
-  label: string;
+  label?: string;
 }
 
-const Switch = ({ label, ...props }: SwitchProps) => {
+export const Switch = ({ label, ...props }: SwitchProps) => {
   return <FormControlLabel control={<MuiSwitch {...props} />} label={label} />;
 };
 

@@ -12,7 +12,7 @@ export interface PopoverProps extends PopoverBaseProps {
   children: React.ReactNode;
 }
 
-const Popover = ({ title, children, ...rest }: PopoverProps) => (
+export const Popover = ({ title, children, ...rest }: PopoverProps) => (
   <MuiPopover {...rest}>
     {title && (
       <Box sx={{ padding: "16px", borderBottom: "1px solid #ddd" }}>

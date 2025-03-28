@@ -4,10 +4,10 @@ import {
   } from "@mui/material";
   
   export interface ChipProps extends MuiChipProps {
-    label: string; 
+    label?: string; 
   }
   
-  const Chip = ({ label, ...rest }: ChipProps) => (
+  export const Chip = ({ label, ...rest }: ChipProps) => (
     <ChipMui label={label} {...rest} />
   );
   

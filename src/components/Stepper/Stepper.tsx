@@ -9,7 +9,7 @@ import React from "react";
 type StepperBaseProps = MuiStepperProps;
 
 export interface StepperStep {
-  label: string;
+  label?: string;
 }
 
 export interface StepperProps extends StepperBaseProps {
@@ -17,7 +17,7 @@ export interface StepperProps extends StepperBaseProps {
   activeStep: number;
 }
 
-const Stepper: React.FC<StepperProps> = ({ steps, activeStep, ...rest }) => {
+export const Stepper: React.FC<StepperProps> = ({ steps, activeStep, ...rest }) => {
   return (
     <MuiStepper activeStep={activeStep} {...rest}>
       {steps.map((step, index) => (

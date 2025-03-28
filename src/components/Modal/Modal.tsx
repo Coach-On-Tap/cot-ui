@@ -10,11 +10,11 @@ import CloseIcon from "@mui/icons-material/Close";
 type ModalBaseProps = MuiModalProps;
 
 export interface ModalProps extends ModalBaseProps {
-  title: string;
+  title?: string;
   onClose: () => void;
 }
 
-const Modal = ({ title, onClose, children, ...rest }: ModalProps) => (
+export const Modal = ({ title, onClose, children, ...rest }: ModalProps) => (
   <MuiModal {...rest} onClose={onClose}>
     <Box
       sx={{

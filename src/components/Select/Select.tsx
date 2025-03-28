@@ -8,14 +8,14 @@ type SelectBaseProps = MuiSelectProps;
 
 export interface SelectOption {
   value: string | number;
-  label: string;
+  label?: string;
 }
 
 export type SelectProps = SelectBaseProps & {
   options: SelectOption[];
 };
 
-const Select = ({ options, ...rest }: SelectProps) => (
+export const Select = ({ options, ...rest }: SelectProps) => (
   <MuiSelect {...rest}>
     {options.map((option) => (
       <MenuItem key={option.value} value={option.value}>

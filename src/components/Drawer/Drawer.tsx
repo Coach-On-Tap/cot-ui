@@ -7,10 +7,10 @@ type DrawerBaseProps = MuiDrawerProps;
 
 export interface DrawerProps extends DrawerBaseProps {
   open: boolean;
-  label: string;
+  label?: string;
 }
 
-const Drawer = ({ open, label, ...rest }: DrawerProps) => (
+export const Drawer = ({ open, label, ...rest }: DrawerProps) => (
   <MuiDrawer open={open} {...rest}>
     {label}
   </MuiDrawer>

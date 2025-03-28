@@ -7,7 +7,7 @@ export interface CheckboxProps extends MuiCheckboxProps {
   label?: string;
 }
 
-const Checkbox = ({ label, ...rest }: CheckboxProps) => (
+export const Checkbox = ({ label, ...rest }: CheckboxProps) => (
   <CheckboxMui {...rest} aria-label={label} />
 );
 

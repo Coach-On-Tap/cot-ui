@@ -7,7 +7,7 @@ export interface ContainerProps extends MuiContainerProps {
   label?: string;
 }
 
-const Container = ({ label, ...rest }: ContainerProps) => (
+export const Container = ({ label, ...rest }: ContainerProps) => (
   <ContainerMui {...rest}>{label && <span>{label}</span>}</ContainerMui>
 );
 

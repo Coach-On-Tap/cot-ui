@@ -7,10 +7,10 @@ import {
 type RadioBaseProps = MuiRadioProps;
 
 export interface RadioProps extends RadioBaseProps {
-  label: string;
+  label?: string;
 }
 
-const Radio = ({ label, ...rest }: RadioProps) => (
+export const Radio = ({ label, ...rest }: RadioProps) => (
   <FormControlLabel control={<MuiRadio {...rest} />} label={label} />
 );
 

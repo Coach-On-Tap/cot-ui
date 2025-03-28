@@ -3,10 +3,10 @@ import { Link as MuiLink, LinkProps as MuiLinkProps } from "@mui/material";
 type LinkBaseProps = MuiLinkProps;
 
 export interface LinkProps extends LinkBaseProps {
-  label: string;
+  label?: string;
 }
 
-const Link = ({ label, ...rest }: LinkProps) => (
+export const Link = ({ label, ...rest }: LinkProps) => (
   <MuiLink {...rest}>{label}</MuiLink>
 );
 

@@ -6,10 +6,10 @@ import {
 type TextFieldBaseProps = MuiTextFieldProps;
 
 export type TextFieldProps = TextFieldBaseProps & {
-  label: string;
+  label?: string;
 };
 
-const TextField = (props: TextFieldProps) => {
+export const TextField = (props: TextFieldProps) => {
   return <MuiTextField {...props} />;
 };
 

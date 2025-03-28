@@ -16,7 +16,7 @@ export interface ListProps extends ListBaseProps {
   items: ListItemData[];
 }
 
-const List = ({ items, ...rest }: ListProps) => (
+export const List = ({ items, ...rest }: ListProps) => (
   <MuiList {...rest}>
     {items.map((item) => (
       <ListItem key={item.id}>

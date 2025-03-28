@@ -3,10 +3,10 @@ import { Alert as MuiAlert, AlertProps as MuiAlertProps } from "@mui/material";
 type AlertBaseProps = MuiAlertProps;
 
 export interface AlertProps extends AlertBaseProps {
-  label: string;
+  label?: string;
 }
 
-const Alert = ({ label, ...rest }: AlertProps) => (
+export const Alert = ({ label, ...rest }: AlertProps) => (
   <MuiAlert {...rest}>{label}</MuiAlert>
 );
 

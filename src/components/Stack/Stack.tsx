@@ -3,10 +3,10 @@ import { Stack as MuiStack, StackProps as MuiStackProps } from "@mui/material";
 type StackBaseProps = MuiStackProps;
 
 export interface StackProps extends StackBaseProps {
-  label: string;
+  label?: string;
 }
 
-const Stack = ({ label, ...props }: StackProps) => {
+export const Stack = ({ label, ...props }: StackProps) => {
   return (
     <>
       <div>{label}</div>

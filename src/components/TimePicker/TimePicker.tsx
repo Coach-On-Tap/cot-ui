@@ -10,10 +10,10 @@ import React from "react";
 type TimePickerBaseProps = MuiTimePickerProps<Date, boolean>;
 
 export interface TimePickerProps extends TimePickerBaseProps {
-  label: string;
+  label?: string;
 }
 
-const TimePicker: React.FC<TimePickerProps> = ({ label, ...rest }) => {
+export const TimePicker: React.FC<TimePickerProps> = ({ label, ...rest }) => {
   return (
     <LocalizationProvider dateAdapter={AdapterLuxon}>
       <MuiTimePicker label={label} {...rest} />

@@ -9,11 +9,11 @@ import {
 type DialogBaseProps = MuiDialogProps;
 
 export interface DialogProps extends DialogBaseProps {
-  label: string;
+  label?: string;
   actions?: React.ReactNode;
 }
 
-const Dialog = ({ label, children, actions, ...rest }: DialogProps) => (
+export const Dialog = ({ label, children, actions, ...rest }: DialogProps) => (
   <MuiDialog {...rest}>
     <DialogTitle>{label}</DialogTitle>
     <DialogContent>{children}</DialogContent>
