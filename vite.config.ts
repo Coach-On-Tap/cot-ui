@@ -3,6 +3,9 @@ import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
 import path from "path";
 import { resolve } from "path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -26,9 +29,9 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
-      name: "AdminPortalComponents",
+      name: "CotUI",
       formats: ["es", "umd"],
-      fileName: (format) => `admin-portal.${format}.js`,
+      fileName: (format) => `cot-ui.${format}.js`,
     },
     rollupOptions: {
       external: ["react", "react-dom", "react-router-dom"],
