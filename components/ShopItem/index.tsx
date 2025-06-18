@@ -43,10 +43,8 @@ const ShopItem = ({ className, value }: ShopItemProps) => {
             as="link"
             href="/shop/details"
             icon="arrow"
-            isWhite
-            isCircle
           />
-          <Button icon="bag" isWhite isCircle />
+          <Button icon="bag" />
         </div>
       </div>
       <div className="p-4 max-xl:p-3">

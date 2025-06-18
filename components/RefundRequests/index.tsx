@@ -21,7 +21,7 @@ const RefundRequests = () => {
             <a href="/income/refunds">8 new requests.</a> 👀
           </div>
         </div>
-        <Button className="w-full" href="/income/refunds" as="link" isStroke>
+        <Button className="w-full" href="/income/refunds" as="link">
           View all
         </Button>
       </div>

@@ -67,8 +67,6 @@ const FieldImage = ({
             className="absolute top-3 right-3"
             icon="close"
             onClick={handleRemove}
-            isWhite
-            isCircle
           />
         </div>
       ) : (

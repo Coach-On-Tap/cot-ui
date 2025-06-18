@@ -80,14 +80,10 @@ const ShareProduct = ({
             setStartTime={setStartTime}
           />
           <div className="flex justify-end gap-3 mt-8 max-md:mt-4">
-            <Button
-              className="max-md:flex-1"
-              isStroke
-              onClick={() => setOpen(false)}
-            >
+            <Button className="max-md:flex-1" onClick={() => setOpen(false)}>
               Cancel
             </Button>
-            <Button className="max-md:flex-1" isBlack>
+            <Button className="max-md:flex-1">
               {reSchedule ? "Reschedule" : "Schedule"}
             </Button>
           </div>

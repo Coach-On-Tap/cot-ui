@@ -79,8 +79,6 @@ const Header = ({
           <Button
             className="flex-col gap-[4.5px] shrink-0 before:w-4.5 before:h-[1.5px] before:rounded-full before:bg-t-secondary before:transition-colors after:w-4.5 after:h-[1.5px] after:rounded-full after:bg-t-secondary after:transition-colors hover:before:bg-t-primary hover:after:bg-t-primary"
             onClick={onToggleSidebar}
-            isCircle
-            isWhite
           />
         </div>
         {title && (
@@ -103,7 +101,6 @@ const Header = ({
               {!hideCreateButton && (
                 <Button
                   className="max-md:hidden"
-                  isBlack
                   href="/products/new"
                   as="link"
                 >
@@ -114,8 +111,6 @@ const Header = ({
           )}
           <Button
             className="!hidden max-lg:!flex max-md:!hidden"
-            isWhite
-            isCircle
             onClick={() => setVisibleSearch(true)}
           >
             <Icon name="search" />
@@ -126,10 +121,7 @@ const Header = ({
         </div>
         {newProduct && (
           <div className="flex items-center gap-3 max-md:gap-0 max-md:w-[calc(100%+0.75rem)] max-md:mt-3 max-md:-mx-1.5">
-            <Button
-              className="max-md:w-[calc(50%-0.75rem)] max-md:mx-1.5"
-              isWhite
-            >
+            <Button className="max-md:w-[calc(50%-0.75rem)] max-md:mx-1.5">
               Save draft
             </Button>
             <Select
@@ -137,7 +129,6 @@ const Header = ({
               value={time}
               onChange={setTime}
               options={times}
-              isBlack
             />
           </div>
         )}

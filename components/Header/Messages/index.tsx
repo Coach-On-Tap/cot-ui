@@ -37,7 +37,7 @@ const Messages = ({}) => {
 
   return (
     <>
-      <Button isWhite isCircle onClick={() => setIsOpen(true)}>
+      <Button onClick={() => setIsOpen(true)}>
         <Icon name="chat-think" />
       </Button>
       <Modal open={isOpen} onClose={() => setIsOpen(false)} isSlidePanel>
@@ -83,7 +83,6 @@ const Messages = ({}) => {
         </div>
         <Button
           className="!absolute left-1/2 bottom-5 z-3 -translate-x-1/2"
-          isBlack
           as="link"
           href="/messages"
         >
