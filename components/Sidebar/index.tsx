@@ -5,18 +5,28 @@ import NavLink from "@/components/NavLink";
 import Button from "@/components/Button";
 import Dropdown from "./Dropdown";
 
-import { navigation } from "@/contstants/navigation";
-
 type SidebarProps = {
   visibleSidebar?: boolean;
   hideSidebar?: boolean;
   onCloseSidebar?: () => void;
+  navigation?: {
+    title: string;
+    icon: string;
+    href: string;
+    counter?: number;
+    list?: {
+      title: string;
+      href: string;
+      counter?: number;
+    }[];
+  }[];
 };
 
 const Sidebar = ({
   visibleSidebar,
   hideSidebar,
   onCloseSidebar,
+  navigation,
 }: SidebarProps) => (
   <div
     className={`fixed top-0 left-0 bottom-0 flex flex-col w-85 p-5 bg-b-surface1 transition-transform duration-300 max-4xl:w-70 max-3xl:w-60 max-xl:w-74 max-md:p-3 ${
@@ -48,7 +58,7 @@ const Sidebar = ({
       className="flex flex-col gap-1 grow overflow-auto -mx-5 px-5 scrollbar scrollbar-thumb-t-tertiary/50 scrollbar-track-b-surface2 max-md:-mx-3 max-md:px-3"
       enabled={visibleSidebar}
     >
-      {navigation.map((item) =>
+      {navigation?.map((item) =>
         item.href ? (
           <NavLink key={item.title} value={item} />
         ) : (

@@ -17,6 +17,7 @@ type Props = {
   variant?: ButtonVariant;
   color?: ButtonColor;
   isCircle?: boolean;
+  isLoading?: boolean;
 };
 
 type ButtonProps = Props &
@@ -36,6 +37,7 @@ const Button: React.FC<ButtonProps> = ({
   variant = "filled",
   color = "primary",
   isCircle,
+  isLoading = false,
   as = "button",
   ...props
 }) => {
@@ -170,14 +172,30 @@ const Button: React.FC<ButtonProps> = ({
     return `${baseClasses} ${sizeClasses} ${variantClasses} ${className || ""}`;
   };
 
+  const renderContent = () => {
+    if (isLoading) {
+      return (
+        <>
+          <Icon className="fill-inherit animate-spin mr-2" name="loader" />
+          {children}
+        </>
+      );
+    }
+    return (
+      <>
+        {icon && <Icon className="fill-inherit" name={icon} />}
+        {children}
+      </>
+    );
+  };
+
   if (as === "a") {
     return (
       <a
         className={getButtonClasses()}
         {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
       >
-        {icon && <Icon className="fill-inherit" name={icon} />}
-        {children}
+        {renderContent()}
       </a>
     );
   }
@@ -185,8 +203,7 @@ const Button: React.FC<ButtonProps> = ({
   if (as === "link") {
     return (
       <a href={(props as { href: string }).href} className={getButtonClasses()}>
-        {icon && <Icon className="fill-inherit" name={icon} />}
-        {children}
+        {renderContent()}
       </a>
     );
   }
@@ -194,10 +211,13 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       className={getButtonClasses()}
+      disabled={
+        isLoading ||
+        (props as React.ButtonHTMLAttributes<HTMLButtonElement>).disabled
+      }
       {...(props as React.ButtonHTMLAttributes<HTMLButtonElement>)}
     >
-      {icon && <Icon className="fill-inherit" name={icon} />}
-      {children}
+      {renderContent()}
     </button>
   );
 };

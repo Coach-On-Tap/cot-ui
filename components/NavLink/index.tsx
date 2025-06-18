@@ -12,8 +12,6 @@ type NavLinkProps = {
 };
 
 const NavLink = ({ value, onClick, isActive = false }: NavLinkProps) => {
-  // Remove router dependency - isActive is now passed as prop
-
   return (
     <a
       className={`group relative flex items-center shrink-0 gap-3 h-12 px-3 text-button transition-colors hover:text-t-primary ${
