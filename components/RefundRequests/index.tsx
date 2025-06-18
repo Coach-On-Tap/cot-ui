@@ -1,9 +1,8 @@
 import Card from "@/components/Card";
 import Image from "@/components/Image";
 import Button from "@/components/Button";
-import { Link } from "react-router-dom";
 
-const RefundRequests = ({}) => {
+const RefundRequests = () => {
   return (
     <Card classHead="!pl-3" title="Refund requests">
       <div className="p-3 pt-0">
@@ -18,8 +17,8 @@ const RefundRequests = ({}) => {
             />
           </div>
           <div className="grow pl-5 text-body-2 font-medium text-t-secondary [&_a]:text-[0.9375rem] [&_a]:leading-[1.5rem] [&_a]:font-semibold [&_a]:text-t-primary [&_a]:transition-colors [&_a]:hover:text-shade-05 max-2xl:pl-3 max-lg:pl-5 dark:[&_a]:hover:text-shade-08/90">
-            <Link to="/income/refunds">52 open refund requests</Link>{" "}
-            <Link to="/income/refunds">8 new requests.</Link> 👀
+            <a href="/income/refunds">52 open refund requests</a>{" "}
+            <a href="/income/refunds">8 new requests.</a> 👀
           </div>
         </div>
         <Button className="w-full" href="/income/refunds" as="link" isStroke>

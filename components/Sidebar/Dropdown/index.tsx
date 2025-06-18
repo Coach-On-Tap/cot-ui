@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
 import AnimateHeight from "react-animate-height";
 import Icon from "@/components/Icon";
 import NavLink from "@/components/NavLink";
@@ -18,7 +17,6 @@ type DropdownProps = {
 };
 
 const Dropdown = ({ value }: DropdownProps) => {
-  const location = useLocation();
   const pathname = location.pathname;
   const isActive = value.list?.some((item) => pathname.includes(item.href));
   const isActiveNewProduct =

@@ -1,5 +1,3 @@
-import { useMemo } from "react";
-import { Link, useLocation } from "react-router-dom";
 import Icon from "@/components/Icon";
 
 type NavLinkProps = {
@@ -10,33 +8,18 @@ type NavLinkProps = {
     counter?: number;
   };
   onClick?: () => void;
+  isActive?: boolean;
 };
 
-const NavLink = ({ value, onClick }: NavLinkProps) => {
-  const location = useLocation();
-  const pathname = location.pathname;
-
-  const isActive = useMemo(() => {
-    if (pathname === value.href) return true;
-
-    switch (value.title) {
-      case "Customer list":
-        return pathname.includes("/customers/customer-list/");
-      case "Shop":
-        return pathname.includes("/shop/");
-      case "Refunds":
-        return pathname.includes("/income/refunds/");
-      default:
-        return false;
-    }
-  }, [pathname, value.href, value.title]);
+const NavLink = ({ value, onClick, isActive = false }: NavLinkProps) => {
+  // Remove router dependency - isActive is now passed as prop
 
   return (
-    <Link
+    <a
       className={`group relative flex items-center shrink-0 gap-3 h-12 px-3 text-button transition-colors hover:text-t-primary ${
         value.icon ? "h-12" : "h-11"
       } ${isActive ? "text-t-primary" : "text-t-secondary"}`}
-      to={value.href}
+      href={value.href}
       key={value.title}
       onClick={onClick}
     >
@@ -63,7 +46,7 @@ const NavLink = ({ value, onClick }: NavLinkProps) => {
           {value.counter}
         </div>
       )}
-    </Link>
+    </a>
   );
 };
 

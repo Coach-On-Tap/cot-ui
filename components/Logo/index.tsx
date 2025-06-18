@@ -1,13 +1,13 @@
 import Image from "@/components/Image";
-import { Link } from "react-router-dom";
 
 type LogoProps = {
   className?: string;
+  href?: string;
 };
 
-const Logo = ({ className }: LogoProps) => {
+const Logo = ({ className, href = "/" }: LogoProps) => {
   return (
-    <Link className={`block w-12 h-12 ${className || ""}`} to="/">
+    <a className={`block w-12 h-12 ${className || ""}`} href={href}>
       <Image
         className="size-full opacity-100 dark:!hidden"
         src="/images/logo-light.png"
@@ -22,7 +22,7 @@ const Logo = ({ className }: LogoProps) => {
         width={48}
         height={48}
       />
-    </Link>
+    </a>
   );
 };
 

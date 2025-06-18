@@ -34,12 +34,11 @@ export default defineConfig({
       fileName: (format) => `cot-ui.${format}.js`,
     },
     rollupOptions: {
-      external: ["react", "react-dom", "react-router-dom"],
+      external: ["react", "react-dom"],
       output: {
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
-          "react-router-dom": "ReactRouterDOM",
         },
       },
     },

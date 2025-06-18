@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import Button from "@/components/Button";
 import Select from "@/components/Select";
 import Logo from "@/components/Logo";
@@ -20,6 +19,7 @@ type HeaderProps = {
   title?: string;
   newProduct?: boolean;
   hideSidebar?: boolean;
+  hideCreateButton?: boolean;
   onToggleSidebar?: () => void;
 };
 
@@ -28,19 +28,12 @@ const Header = ({
   title,
   newProduct,
   hideSidebar,
+  hideCreateButton = false,
   onToggleSidebar,
 }: HeaderProps) => {
   const [time, setTime] = useState(times[0]);
-  const location = useLocation();
-  const pathname = location.pathname;
   const [hasOverflowHidden, setHasOverflowHidden] = useState(false);
   const [visibleSearch, setVisibleSearch] = useState(false);
-
-  const isHideCreateButton =
-    pathname.includes("/customers/customer-list/") ||
-    pathname.includes("/income/refunds/") ||
-    pathname.includes("/shop/") ||
-    pathname.includes("/notifications");
 
   useEffect(() => {
     const observer = new MutationObserver((mutations) => {
@@ -107,7 +100,7 @@ const Header = ({
                 onClose={() => setVisibleSearch(false)}
                 visible={visibleSearch}
               />
-              {!isHideCreateButton && (
+              {!hideCreateButton && (
                 <Button
                   className="max-md:hidden"
                   isBlack
