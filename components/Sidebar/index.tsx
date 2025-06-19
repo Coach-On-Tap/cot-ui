@@ -27,7 +27,7 @@ const Sidebar = ({
   hideSidebar,
   onCloseSidebar,
   navigation,
-  LogoComponent,
+  LogoComponent = <Logo />,
 }: SidebarProps) => {
   return (
     <>

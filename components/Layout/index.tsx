@@ -55,6 +55,7 @@ const Layout = ({
           setVisibleSidebar(false);
         }}
         navigation={navigation}
+        LogoComponent={LogoComponent}
       />
       <div
         className={`fixed inset-0 z-30 bg-shade-07/70 transition-all duration-300 dark:bg-shade-04/90 ${
