@@ -17,7 +17,6 @@ const times = [
 type HeaderProps = {
   className?: string;
   title?: string;
-  newProduct?: boolean;
   hideSidebar?: boolean;
   hideCreateButton?: boolean;
   onToggleSidebar?: () => void;
@@ -26,7 +25,6 @@ type HeaderProps = {
 const Header = ({
   className,
   title,
-  newProduct,
   hideSidebar,
   hideCreateButton = false,
   onToggleSidebar,
@@ -68,7 +66,7 @@ const Header = ({
       <div
         className={`flex items-center h-22 max-md:h-18 ${
           hideSidebar ? "center max-w-full" : "center-with-sidebar"
-        } ${newProduct ? "max-md:flex-wrap max-md:!h-auto max-md:p-3" : ""}`}
+        }`}
       >
         <div
           className={`mr-3 gap-3 max-md:mr-auto ${
@@ -88,26 +86,18 @@ const Header = ({
         )}
         <div
           className={`flex items-center gap-3 ${
-            newProduct ? "hidden max-md:flex" : ""
-          } ${hideSidebar ? "grow max-lg:grow-0 max-lg:ml-auto" : ""}`}
+            hideSidebar ? "grow max-lg:grow-0 max-lg:ml-auto" : ""
+          }`}
         >
-          {!newProduct && (
-            <>
-              <SearchGlobal
-                className={`max-md:hidden ${hideSidebar ? "mr-auto" : ""}`}
-                onClose={() => setVisibleSearch(false)}
-                visible={visibleSearch}
-              />
-              {!hideCreateButton && (
-                <Button
-                  className="max-md:hidden"
-                  href="/products/new"
-                  as="link"
-                >
-                  Create
-                </Button>
-              )}
-            </>
+          <SearchGlobal
+            className={`max-md:hidden ${hideSidebar ? "mr-auto" : ""}`}
+            onClose={() => setVisibleSearch(false)}
+            visible={visibleSearch}
+          />
+          {!hideCreateButton && (
+            <Button className="max-md:hidden" href="/products/new" as="link">
+              Create
+            </Button>
           )}
           <Button
             className="!hidden max-lg:!flex max-md:!hidden"
@@ -119,19 +109,17 @@ const Header = ({
           <Messages />
           <User />
         </div>
-        {newProduct && (
-          <div className="flex items-center gap-3 max-md:gap-0 max-md:w-[calc(100%+0.75rem)] max-md:mt-3 max-md:-mx-1.5">
-            <Button className="max-md:w-[calc(50%-0.75rem)] max-md:mx-1.5">
-              Save draft
-            </Button>
-            <Select
-              className="min-w-36 max-md:w-[calc(50%-0.75rem)] max-md:mx-1.5"
-              value={time}
-              onChange={setTime}
-              options={times}
-            />
-          </div>
-        )}
+        <div className="flex items-center gap-3 max-md:gap-0 max-md:w-[calc(100%+0.75rem)] max-md:mt-3 max-md:-mx-1.5">
+          <Button className="max-md:w-[calc(50%-0.75rem)] max-md:mx-1.5">
+            Save draft
+          </Button>
+          <Select
+            className="min-w-36 max-md:w-[calc(50%-0.75rem)] max-md:mx-1.5"
+            value={time}
+            onChange={setTime}
+            options={times}
+          />
+        </div>
       </div>
     </header>
   );

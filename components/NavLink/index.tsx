@@ -1,23 +1,23 @@
-import Icon from "@/components/Icon";
-
 type NavLinkProps = {
   value: {
-    href: string;
     title: string;
-    icon?: string;
+    LinkComponent?: React.ElementType;
+    IconComponent?: React.ElementType;
     counter?: number;
+    icon?: string;
   };
   onClick?: () => void;
   isActive?: boolean;
 };
 
 const NavLink = ({ value, onClick, isActive = false }: NavLinkProps) => {
+  const LinkComponent = value.LinkComponent || "a";
+  const IconComponent = value.IconComponent || "div";
   return (
-    <a
+    <LinkComponent
       className={`group relative flex items-center shrink-0 gap-3 h-12 px-3 text-button transition-colors hover:text-t-primary ${
-        value.icon ? "h-12" : "h-11"
+        IconComponent ? "h-12" : "h-11"
       } ${isActive ? "text-t-primary" : "text-t-secondary"}`}
-      href={value.href}
       key={value.title}
       onClick={onClick}
     >
@@ -26,12 +26,11 @@ const NavLink = ({ value, onClick, isActive = false }: NavLinkProps) => {
           <div className="absolute inset-0.25 bg-b-pop rounded-[0.6875rem]"></div>
         </div>
       )}
-      {value.icon && (
-        <Icon
+      {IconComponent && (
+        <IconComponent
           className={`relative z-2 transition-colors group-hover:fill-t-primary ${
             isActive ? "fill-t-primary" : "fill-t-secondary"
           }`}
-          name={value.icon}
         />
       )}
       <div className="relative z-2 mr-3">{value.title}</div>
@@ -44,7 +43,7 @@ const NavLink = ({ value, onClick, isActive = false }: NavLinkProps) => {
           {value.counter}
         </div>
       )}
-    </a>
+    </LinkComponent>
   );
 };
 

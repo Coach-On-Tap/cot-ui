@@ -5,23 +5,22 @@ import ThemeButton from "@/components/ThemeButton";
 type LayoutProps = {
   title?: string;
   children: React.ReactNode;
-  newProduct?: boolean;
   hideSidebar?: boolean;
   navigation?: {
     title: string;
-    icon: string;
-    href: string;
+    IconComponent?: React.ElementType;
+    LinkComponent?: React.ElementType;
     counter?: number;
+    list?: {
+      title: string;
+      LinkComponent?: React.ElementType;
+      IconComponent?: React.ElementType;
+      counter?: number;
+    }[];
   }[];
 };
 
-const Layout = ({
-  title,
-  children,
-  newProduct,
-  hideSidebar,
-  navigation,
-}: LayoutProps) => {
+const Layout = ({ title, children, hideSidebar, navigation }: LayoutProps) => {
   const [visibleSidebar, setVisibleSidebar] = useState(false);
 
   useEffect(() => {
@@ -64,17 +63,12 @@ const Layout = ({
           visibleSidebar ? "right-[calc(0px+var(--scrollbar-width))]" : ""
         }`}
         title={title}
-        newProduct={newProduct}
         hideSidebar={hideSidebar}
         onToggleSidebar={() => {
           setVisibleSidebar(!visibleSidebar);
         }}
       />
-      <div
-        className={`pt-22 pb-5 max-md:pt-18 ${
-          newProduct ? "max-md:!pt-33" : ""
-        }`}
-      >
+      <div className={`pt-22 pb-5 max-md:pt-18`}>
         <div className={`${hideSidebar ? "center" : "center-with-sidebar"}`}>
           {children}
         </div>

@@ -10,14 +10,14 @@ const Logo = ({ className, href = "/" }: LogoProps) => {
     <a className={`block w-12 h-12 ${className || ""}`} href={href}>
       <Image
         className="size-full opacity-100 dark:!hidden"
-        src="/images/logo-light.png"
+        src="./cot-logo-header.svg"
         alt="logo"
         width={48}
         height={48}
       />
       <Image
         className="size-full !hidden opacity-100 dark:!block"
-        src="/images/logo-light.png"
+        src="./cot-logo-header.svg"
         alt="logo"
         width={48}
         height={48}
