@@ -2,19 +2,18 @@ import { useEffect, useState } from "react";
 import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
 import ThemeButton from "@/components/ThemeButton";
-type LayoutProps = {
+
+export type LayoutProps = {
   title?: string;
   children: React.ReactNode;
   hideSidebar?: boolean;
   navigation?: {
     title: string;
-    IconComponent?: React.ElementType;
     LinkComponent?: React.ElementType;
     counter?: number;
     list?: {
       title: string;
       LinkComponent?: React.ElementType;
-      IconComponent?: React.ElementType;
       counter?: number;
     }[];
   }[];

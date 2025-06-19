@@ -5,22 +5,21 @@ import NavLink from "@/components/NavLink";
 import Button from "@/components/Button";
 import Dropdown from "./Dropdown";
 
-type SidebarProps = {
+export type SidebarProps = {
   visibleSidebar?: boolean;
   hideSidebar?: boolean;
   onCloseSidebar?: () => void;
   navigation?: {
     title: string;
-    IconComponent?: React.ElementType;
     LinkComponent?: React.ElementType;
     counter?: number;
     list?: {
       title: string;
       LinkComponent?: React.ElementType;
-      IconComponent?: React.ElementType;
       counter?: number;
     }[];
   }[];
+  LogoComponent?: React.ReactNode;
 };
 
 const Sidebar = ({
@@ -28,6 +27,7 @@ const Sidebar = ({
   hideSidebar,
   onCloseSidebar,
   navigation,
+  LogoComponent,
 }: SidebarProps) => {
   return (
     <>
@@ -46,7 +46,7 @@ const Sidebar = ({
               }`
         }`}
       >
-        <Logo className="mb-5" />
+        <div className="mb-5">{LogoComponent || <Logo />}</div>
         <Button
           className={`group absolute top-5 right-5 max-md:top-3 max-md:right-3 ${
             hideSidebar ? "flex" : "!hidden max-xl:!flex"
