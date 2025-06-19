@@ -3,7 +3,7 @@ import Button from "@/components/Button";
 import Logo from "@/components/Logo";
 import Icon from "@/components/Icon";
 import SearchGlobal from "./SearchGlobal";
-import User from "./User";
+import User, { UserProps } from "./User";
 import Notifications from "./Notifications";
 import Messages from "./Messages";
 
@@ -14,6 +14,7 @@ type HeaderProps = {
   hideCreateButton?: boolean;
   onToggleSidebar?: () => void;
   LogoComponent?: React.ReactNode;
+  userProps?: UserProps;
 };
 
 const Header = ({
@@ -22,6 +23,7 @@ const Header = ({
   hideSidebar,
   onToggleSidebar,
   LogoComponent,
+  userProps,
 }: HeaderProps) => {
   const [hasOverflowHidden, setHasOverflowHidden] = useState(false);
   const [visibleSearch, setVisibleSearch] = useState(false);
@@ -58,7 +60,7 @@ const Header = ({
     >
       <div
         className={`flex items-center h-22 max-md:h-18 ${
-          hideSidebar ? "center max-w-full" : "center-with-sidebar"
+          hideSidebar ? "center max-w-full" : "center-with-sidebar flex-end"
         }`}
       >
         <div
@@ -78,24 +80,32 @@ const Header = ({
           </div>
         )}
         <div
-          className={`flex items-center gap-3 ${
+          className={`flex items-center justify-between w-full gap-3 ${
             hideSidebar ? "grow max-lg:grow-0 max-lg:ml-auto" : ""
           }`}
         >
-          <SearchGlobal
-            className={`max-md:hidden ${hideSidebar ? "mr-auto" : ""}`}
-            onClose={() => setVisibleSearch(false)}
-            visible={visibleSearch}
-          />
-          <Button
-            className="!hidden max-lg:!flex max-md:!hidden"
-            onClick={() => setVisibleSearch(true)}
-          >
-            <Icon name="search" />
-          </Button>
-          <Notifications />
-          <Messages />
-          <User />
+          <div className="flex-shrink-0">
+            <SearchGlobal
+              className={`max-md:hidden`}
+              onClose={() => setVisibleSearch(false)}
+              visible={visibleSearch}
+            />
+            <Button
+              className="!hidden max-lg:!flex max-md:!hidden"
+              onClick={() => setVisibleSearch(true)}
+            >
+              <Icon name="search" />
+            </Button>
+          </div>
+          <div className="flex items-center gap-3 flex-shrink-0">
+            <Notifications />
+            <Messages />
+            <User
+              avatarUrl={userProps?.avatarUrl || ""}
+              navigationUser={userProps?.navigationUser || []}
+              onLogout={userProps?.onLogout || (() => {})}
+            />
+          </div>
         </div>
       </div>
     </header>

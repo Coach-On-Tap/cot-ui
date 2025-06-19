@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
+import { UserProps } from "@/components/Header/User";
 import ThemeButton from "@/components/ThemeButton";
 
 export type LayoutProps = {
@@ -18,6 +19,7 @@ export type LayoutProps = {
     }[];
   }[];
   LogoComponent?: React.ReactNode;
+  userProps: UserProps;
 };
 
 const Layout = ({
@@ -26,6 +28,7 @@ const Layout = ({
   hideSidebar,
   navigation,
   LogoComponent,
+  userProps,
 }: LayoutProps) => {
   const [visibleSidebar, setVisibleSidebar] = useState(false);
 
@@ -75,6 +78,7 @@ const Layout = ({
           setVisibleSidebar(!visibleSidebar);
         }}
         LogoComponent={LogoComponent}
+        userProps={userProps}
       />
       <div className={`pt-22 pb-5 max-md:pt-18`}>
         <div className={`${hideSidebar ? "center" : "center-with-sidebar"}`}>

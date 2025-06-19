@@ -10,9 +10,18 @@ import Image from "@/components/Image";
 import Icon from "@/components/Icon";
 import Modal from "@/components/Modal";
 import Login from "@/components/Login";
-import { navigationUser } from "@/contstants/navigation";
 
-const User = () => {
+export type UserProps = {
+  avatarUrl: string;
+  navigationUser: {
+    title: string;
+    LinkComponent?: React.ElementType;
+  }[];
+  onLogout: () => void;
+};
+
+const User = (props: UserProps) => {
+  const { avatarUrl, navigationUser, onLogout } = props;
   const [isOpen, setIsOpen] = useState(false);
   const isActive = (href: string) => href === href;
 
@@ -23,7 +32,7 @@ const User = () => {
         <MenuButton className="relative z-40 w-12 h-12 rounded-full overflow-hidden transition-colors after:absolute after:inset-[0.09375rem] after:border-[0.15625rem] after:border-b-surface2 after:rounded-full data-[hover]:bg-primary-01 data-[active]:bg-primary-01">
           <Image
             className="size-10 rounded-full object-cover opacity-100"
-            src="/images/avatar-sm.png"
+            src={avatarUrl}
             width={40}
             height={40}
             alt="avatar"
@@ -34,33 +43,26 @@ const User = () => {
           anchor="bottom end"
           transition
         >
-          {navigationUser.map((link, index) => (
+          {navigationUser.map(({ title, LinkComponent }, index) => (
             <MenuItem key={index}>
-              <a
-                className={`group/item relative flex items-center h-12 px-3 text-button text-t-secondary transition-colors data-[focus]:text-t-primary before:absolute before:inset-0 before:rounded-[16px] before:bg-linear-to-b before:from-shade-09 before:to-[#ebebeb] before:opacity-0 before:transition-opacity after:absolute after:inset-0.25 after:bg-b-pop after:rounded-[15px] after:opacity-0 after:transition-opacity ${
-                  link.title === "Upgrade to Pro" ? "!text-primary-01" : ""
-                } ${
-                  isActive(link.href)
-                    ? "!text-t-primary before:opacity-100 after:opacity-100 dark:before:opacity-[0.075]"
-                    : ""
-                }`}
-                href={link.href}
+              <div
+                className={`group/item relative flex items-center h-12 px-3 text-button text-t-secondary transition-colors data-[focus]:text-t-primary before:absolute before:inset-0 before:rounded-[16px] before:bg-linear-to-b before:from-shade-09 before:to-[#ebebeb] before:opacity-0 before:transition-opacity after:absolute after:inset-0.25 after:bg-b-pop after:rounded-[15px] after:opacity-0 after:transition-opacity ${"!text-primary-01"}`}
               >
-                <Icon
-                  className={`relative z-2 mr-4 fill-t-secondary transition-colors group-[[data-focus]]/item:fill-t-primary ${
-                    link.title === "Upgrade to Pro" ? "!fill-primary-01" : ""
-                  } ${isActive(link.href) ? "!fill-t-primary" : ""}`}
-                  name={link.icon}
-                />
-                <div className="relative z-2">{link.title}</div>
-              </a>
+                {LinkComponent ? (
+                  <LinkComponent>
+                    <div className="relative z-2">{title}</div>
+                  </LinkComponent>
+                ) : (
+                  <div className="relative z-2">{title}</div>
+                )}
+              </div>
             </MenuItem>
           ))}
           <MenuSeparator className="-mx-3 my-3 h-px bg-s-subtle" />
           <MenuItem>
             <button
               className="group/item flex items-center w-full h-12 px-3 text-button text-t-secondary transition-colors data-[focus]:text-t-primary"
-              onClick={() => setIsOpen(true)}
+              onClick={onLogout}
             >
               <Icon
                 className="mr-4 fill-t-secondary transition-colors group-[[data-focus]]/item:fill-t-primary"

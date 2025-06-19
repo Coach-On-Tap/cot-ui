@@ -1,6 +1,5 @@
 import Logo from "@/components/Logo";
 import { RemoveScroll } from "react-remove-scroll";
-import ThemeButton from "@/components/ThemeButton";
 import NavLink from "@/components/NavLink";
 import Button from "@/components/Button";
 import Dropdown from "./Dropdown";
@@ -69,11 +68,6 @@ const Sidebar = ({
             )
           )}
         </RemoveScroll>
-        <div className="mt-auto pt-6 max-md:pt-4">
-          <ThemeButton
-            className={`${hideSidebar ? "hidden max-lg:block" : ""}`}
-          />
-        </div>
       </div>
     </>
   );
