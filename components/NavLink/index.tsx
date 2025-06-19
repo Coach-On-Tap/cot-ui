@@ -27,13 +27,14 @@ const NavLink = ({ value, onClick, isActive = false }: NavLinkProps) => {
             <div className="absolute inset-0.25 bg-b-pop rounded-[0.6875rem]"></div>
           </div>
         )}
-        {IconComponent && (
-          <IconComponent
-            className={`relative z-2 transition-colors group-hover:fill-t-primary ${
-              isActive ? "fill-t-primary" : "fill-t-secondary"
-            }`}
-          />
-        )}
+        <div></div>
+        <div
+          className={`relative z-2 transition-colors group-hover:fill-t-primary ${
+            isActive ? "fill-t-primary" : "fill-t-secondary"
+          }`}
+        >
+          <IconComponent />
+        </div>
         <div className="relative z-2 mr-3">{value.title}</div>
         {value.counter && (
           <div
