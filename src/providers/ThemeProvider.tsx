@@ -28,9 +28,10 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     // const saved = localStorage.getItem("theme") as Theme;
     // if (saved) return saved;
 
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
+    // return window.matchMedia("(prefers-color-scheme: dark)").matches
+    //   ? "dark"
+    //   : "light";
+    return "light";
   });
 
   const toggleTheme = () => {
