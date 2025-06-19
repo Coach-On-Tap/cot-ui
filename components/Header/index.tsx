@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Button from "@/components/Button";
-import Select from "@/components/Select";
 import Logo from "@/components/Logo";
 import Icon from "@/components/Icon";
 import SearchGlobal from "./SearchGlobal";
@@ -8,28 +7,22 @@ import User from "./User";
 import Notifications from "./Notifications";
 import Messages from "./Messages";
 
-const times = [
-  { id: 1, name: "Publish now" },
-  { id: 2, name: "Publish tomorrow" },
-  { id: 3, name: "Publish later" },
-];
-
 type HeaderProps = {
   className?: string;
   title?: string;
   hideSidebar?: boolean;
   hideCreateButton?: boolean;
   onToggleSidebar?: () => void;
+  LogoComponent?: React.ReactNode;
 };
 
 const Header = ({
   className,
   title,
   hideSidebar,
-  hideCreateButton = false,
   onToggleSidebar,
+  LogoComponent,
 }: HeaderProps) => {
-  const [time, setTime] = useState(times[0]);
   const [hasOverflowHidden, setHasOverflowHidden] = useState(false);
   const [visibleSearch, setVisibleSearch] = useState(false);
 
@@ -73,7 +66,7 @@ const Header = ({
             hideSidebar ? "flex" : "hidden max-xl:flex"
           }`}
         >
-          <Logo />
+          {LogoComponent || <Logo />}
           <Button
             className="flex-col gap-[4.5px] shrink-0 before:w-4.5 before:h-[1.5px] before:rounded-full before:bg-t-secondary before:transition-colors after:w-4.5 after:h-[1.5px] after:rounded-full after:bg-t-secondary after:transition-colors hover:before:bg-t-primary hover:after:bg-t-primary"
             onClick={onToggleSidebar}
@@ -94,11 +87,6 @@ const Header = ({
             onClose={() => setVisibleSearch(false)}
             visible={visibleSearch}
           />
-          {!hideCreateButton && (
-            <Button className="max-md:hidden" href="/products/new" as="link">
-              Create
-            </Button>
-          )}
           <Button
             className="!hidden max-lg:!flex max-md:!hidden"
             onClick={() => setVisibleSearch(true)}
@@ -108,17 +96,6 @@ const Header = ({
           <Notifications />
           <Messages />
           <User />
-        </div>
-        <div className="flex items-center gap-3 max-md:gap-0 max-md:w-[calc(100%+0.75rem)] max-md:mt-3 max-md:-mx-1.5">
-          <Button className="max-md:w-[calc(50%-0.75rem)] max-md:mx-1.5">
-            Save draft
-          </Button>
-          <Select
-            className="min-w-36 max-md:w-[calc(50%-0.75rem)] max-md:mx-1.5"
-            value={time}
-            onChange={setTime}
-            options={times}
-          />
         </div>
       </div>
     </header>

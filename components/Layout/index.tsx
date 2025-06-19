@@ -17,9 +17,16 @@ export type LayoutProps = {
       counter?: number;
     }[];
   }[];
+  LogoComponent?: React.ReactNode;
 };
 
-const Layout = ({ title, children, hideSidebar, navigation }: LayoutProps) => {
+const Layout = ({
+  title,
+  children,
+  hideSidebar,
+  navigation,
+  LogoComponent,
+}: LayoutProps) => {
   const [visibleSidebar, setVisibleSidebar] = useState(false);
 
   useEffect(() => {
@@ -66,6 +73,7 @@ const Layout = ({ title, children, hideSidebar, navigation }: LayoutProps) => {
         onToggleSidebar={() => {
           setVisibleSidebar(!visibleSidebar);
         }}
+        LogoComponent={LogoComponent}
       />
       <div className={`pt-22 pb-5 max-md:pt-18`}>
         <div className={`${hideSidebar ? "center" : "center-with-sidebar"}`}>
